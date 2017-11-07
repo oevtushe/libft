@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/04 13:53:40 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/07 19:12:05 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define _LIBFT_H
 
 # include <string.h>
+# define LONG_INT_MAX 9223372036854775807
 
 typedef struct	s_list
 {
