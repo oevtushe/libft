@@ -1,2 +1,0 @@
-# libft
-Useful functions C
