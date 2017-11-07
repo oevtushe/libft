@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 07:13:42 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/10/30 07:21:15 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/07 13:19:09 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	return ((char*)ft_memalloc(size));
+	return ((char*)ft_memalloc(size + 1));
 }
