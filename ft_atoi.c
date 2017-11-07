@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 16:15:11 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/07 18:04:55 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/07 18:59:00 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,26 @@ static int		is_overflow(int sign, char val, long int cur)
 	long int diff;
 
 	diff = LONG_INT_MAX / 10 - cur;
-	if ((val >= '0' && val <= '9' && diff >= 0))
+	if (diff >= 0)
 	{
-		if (diff > 0 || (sign > 0 && ((val - '0' <= LONG_INT_MAX % 10) || \
+		if (diff > 0 || (sign > 0 \
+					&& ((val - '0' <= LONG_INT_MAX % 10) || \
 					(sign < 0 && val - '0' <= LONG_INT_MAX % 10 + 1))))
 			return (0);
 	}
 	return (1);
+}
+
+static int		last_check(long int val, char symb, int sign)
+{
+	if (ft_isdigit(symb))
+	{
+		if (!is_overflow(sign, symb, val))
+			return ((int)(val * 10 + symb - '0') * sign);
+		else
+			return (sign > 0 ? -1 : 0);
+	}
+	return (int)(val * sign);
 }
 
 int				ft_atoi(const char *str)
@@ -47,10 +60,7 @@ int				ft_atoi(const char *str)
 	}
 	else if (str[i] == '+')
 		++i;
-	while (++len < 18 && str[i] >= '0' && str[i] <= '9')
+	while (++len < 18 && ft_isdigit(str[i]))
 		res = res * 10 + str[i++] - '0';
-	if (!is_overflow(sign, str[i], res))
-		return ((int)(res * 10 + str[i] - '0') * sign);
-	else
-		return (sign > 0 ? -1 : 0);
+	return (last_check(res, str[i], sign));
 }
