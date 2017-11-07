@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 12:20:08 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/02 19:27:34 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/07 13:41:56 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ static char	**ft_ltsa(t_list *lst)
 	char	**arr;
 	int		len;
 	int		i;
-	char	c[1];
 
 	i = 0;
-	c[0] = '\0';
 	len = ft_lstlen(lst);
 	arr = (char**)ft_memalloc(sizeof(char*) * (len + 1));
 	if (arr != NULL)
@@ -32,7 +30,6 @@ static char	**ft_ltsa(t_list *lst)
 			lst = lst->next;
 		}
 	}
-	arr[len] = ft_strdup(c);
 	return (arr);
 }
 
@@ -52,11 +49,15 @@ char		**ft_strsplit(char const *s, char c)
 
 	begin = 0;
 	lst = NULL;
+	if (!s)
+		return (NULL);
 	while ((end = ft_strfnd(&s[begin], c)) != -1)
 	{
-		if (end != 0 && begin != 0)
+		if (end != 0)
 		{
 			tmp = ft_strsub(s, begin, end);
+			if (!tmp)
+				return (NULL);
 			ft_lstappend(&lst, ft_lstnew(tmp, ft_strlen(tmp) + 1));
 			free(tmp);
 		}

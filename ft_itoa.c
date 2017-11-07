@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 18:44:51 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/10/30 19:41:43 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/07 13:43:17 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,15 @@ char			*ft_itoa(int n)
 
 	idx = 0;
 	nn = (long int)n;
-	res = ft_strnew(sizeof(char) * (ft_intln(n) + 1));
-	if (nn < 0)
+	res = ft_strnew(sizeof(char) * ft_intln(n));
+	if (res)
 	{
-		res[idx++] = '-';
-		nn *= -1;
+		if (nn < 0)
+		{
+			res[idx++] = '-';
+			nn *= -1;
+		}
+		ft_itoa_help(nn, res, &idx);
 	}
-	ft_itoa_help(nn, res, &idx);
 	return (res);
 }

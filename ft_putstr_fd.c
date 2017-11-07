@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 17:21:42 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/04 11:19:00 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/07 13:45:24 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char const *s, int fd)
 {
 	int i;
 
+	if (!s)
+		return ;
 	i = -1;
 	while (s[++i] != '\0')
 	{
