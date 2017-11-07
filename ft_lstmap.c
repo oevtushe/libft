@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/02 12:03:03 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/02 14:50:17 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/07 14:26:12 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	nlst = ft_lstnew(NULL, 0);
 	nlst_r = nlst;
-	while (lst != NULL)
+	while (lst)
 	{
 		tmp = f(lst);
-		if (tmp != NULL)
+		if (tmp)
 		{
-			nlst_r->next = ft_memdup(tmp, sizeof(t_list));
-			if (nlst_r->next == NULL)
-				return (NULL);
+			nlst_r->next = tmp;
 			nlst_r = nlst_r->next;
 		}
 		lst = lst->next;
