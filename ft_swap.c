@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdup.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 12:56:19 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/12 13:31:52 by oevtushe         ###   ########.fr       */
+/*   Created: 2017/11/12 12:56:18 by oevtushe          #+#    #+#             */
+/*   Updated: 2017/11/12 13:03:39 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	*ft_memdup(void *data, size_t size)
+void	ft_swap(void *p1, void *p2, size_t size)
 {
-	void *copy;
+	void *c;
 
-	copy = NULL;
-	if (data)
-	{
-		copy = ft_memalloc(size);
-		if (copy)
-			ft_memcpy(copy, data, size);
-	}
-	return (copy);
+	c = malloc(size);
+	ft_memcpy(c, p1, size);
+	ft_memcpy(p1, p2, size);
+	ft_memcpy(p2, c, size);
+	free(c);
 }
