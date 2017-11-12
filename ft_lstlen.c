@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/02 14:19:14 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/02 14:23:49 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/12 16:28:05 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_lstlen(const t_list *lst)
 	int len;
 
 	len = 0;
-	while (lst != NULL)
+	while (lst)
 	{
 		lst = lst->next;
 		++len;

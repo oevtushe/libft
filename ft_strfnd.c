@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/02 15:00:49 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/02 15:18:50 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/12 16:39:07 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ int		ft_strfnd(const char *str, char c)
 {
 	int i;
 
-	i = -1;
-	while (str[++i] != '\0')
-		if (str[i] == c)
-			return (i);
+	if (str)
+	{
+		i = -1;
+		while (str[++i] != '\0')
+			if (str[i] == c)
+				return (i);
+	}
 	return (-1);
 }

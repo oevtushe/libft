@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 07:05:30 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/07 13:20:02 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/12 16:35:51 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_memdel(void **ap)
 {
-	if (!ap)
+	if (!ap || !*ap)
 		return ;
 	free(*ap);
 	*ap = NULL;

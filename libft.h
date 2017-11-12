@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/12 13:04:55 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/12 17:03:09 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-void			ft_bzero(char *s, size_t n);
+void			ft_bzero(void *s, size_t n);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);

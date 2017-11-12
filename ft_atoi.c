@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 16:15:11 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/07 18:59:00 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/12 16:18:10 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int				ft_atoi(const char *str)
 		++i;
 	}
 	else if (str[i] == '+')
+		++i;
+	while (str[i] == '0')
 		++i;
 	while (++len < 18 && ft_isdigit(str[i]))
 		res = res * 10 + str[i++] - '0';
