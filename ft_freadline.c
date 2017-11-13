@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 17:50:41 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/12 18:01:48 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/13 07:01:34 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static void ft_del(void *data, size_t size)
+static void	ft_del(void *data, size_t size)
 {
 	size = 0;
 	free((char*)data);
@@ -23,9 +23,9 @@ static void ft_del(void *data, size_t size)
 
 static char	*ft_lsttstr(t_list *lst)
 {
-	int i;
-	int size;
-	char *result;
+	int		i;
+	int		size;
+	char	*result;
 
 	i = 0;
 	size = ft_lstlen(lst);
@@ -40,10 +40,10 @@ static char	*ft_lsttstr(t_list *lst)
 
 char		*ft_freadline(int fd)
 {
-	int i;
-	char c;
-	t_list *lst;
-	char *str;
+	int		i;
+	char	c;
+	t_list	*lst;
+	char	*str;
 
 	lst = NULL;
 	while ((i = read(fd, &c, 1)) > 0 && c != '\n')
