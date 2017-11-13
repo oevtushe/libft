@@ -6,11 +6,9 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/02 15:00:49 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/12 16:39:07 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/13 07:24:08 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_strfnd(const char *str, char c)
 {
