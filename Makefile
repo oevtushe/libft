@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2017/11/12 13:04:08 by oevtushe         ###   ########.fr        #
+#    Updated: 2017/11/14 10:45:11 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,19 +25,19 @@ OBJ=ft_bzero.o ft_memcpy.o ft_memcmp.o ft_memmove.o \
 	 ft_itoa.o ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o \
 	 ft_lstiter.o ft_lstappend.o ft_memdup.o ft_lstlen.o ft_lstmap.o \
 	 ft_strfnd.o ft_strsplit.o ft_memcpy.o ft_memchr.o ft_putendl_fd.o \
-	 ft_memccpy.o ft_swap.o
+	 ft_memccpy.o ft_swap.o ft_freadline.o
 DEPS=libft.h
 CFLAGS=-Wall -Werror -Wextra
 NAME=libft.a
 
 %.o: %.c $(DEPS)
-	gcc $(CFLAGS) -c -o $@ $< -I.
+	@gcc $(CFLAGS) -c -o $@ $< -I.
 all: $(NAME)
 $(NAME): $(OBJ)
-	ar -rc $(NAME) $(OBJ)
+	@ar -rc $(NAME) $(OBJ)
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 re: fclean
-	make
+	@make

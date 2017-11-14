@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 17:50:41 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/13 07:01:34 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/14 11:15:09 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,13 @@ static char	*ft_lsttstr(t_list *lst)
 	i = 0;
 	size = ft_lstlen(lst);
 	result = ft_strnew(size * sizeof(char));
-	while (lst)
+	if (result)
 	{
-		result[i++] = *((char*)lst->content);
-		lst = lst->next;
+		while (lst)
+		{
+			result[i++] = *((char*)lst->content);
+			lst = lst->next;
+		}
 	}
 	return (result);
 }
@@ -45,10 +48,14 @@ char		*ft_freadline(int fd)
 	t_list	*lst;
 	char	*str;
 
-	lst = NULL;
-	while ((i = read(fd, &c, 1)) > 0 && c != '\n')
-		ft_lstappend(&lst, ft_lstnew(&c, sizeof(char)));
-	str = ft_lsttstr(lst);
-	ft_lstdel(&lst, ft_del);
+	str = NULL;
+	if (fd != -1)
+	{
+		lst = NULL;
+		while ((i = read(fd, &c, 1)) > 0 && c != '\n')
+			ft_lstappend(&lst, ft_lstnew(&c, sizeof(char)));
+		str = ft_lsttstr(lst);
+		ft_lstdel(&lst, ft_del);
+	}
 	return (str);
 }

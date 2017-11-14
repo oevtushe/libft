@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 08:11:07 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/07 13:22:01 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/14 11:06:35 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		i;
 	char	*fresh;
 
-	if (!s || !f)
-		return (NULL);
-	i = -1;
-	fresh = ft_strnew(sizeof(char) * (ft_strlen(s)));
-	if (fresh != NULL)
+	fresh = NULL;
+	if (s && f)
 	{
-		while (s[++i] != '\0')
-			fresh[i] = f(s[i]);
+		i = -1;
+		fresh = ft_strnew(sizeof(char) * (ft_strlen(s)));
+		if (fresh)
+		{
+			while (s[++i] != '\0')
+				fresh[i] = f(s[i]);
+		}
 	}
 	return (fresh);
 }
