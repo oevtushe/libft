@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/02 12:32:41 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/12 16:24:21 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/16 16:06:08 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstappend(t_list **lst, t_list *new)
 			return ;
 		}
 		runner = *lst;
-		while (runner->next != NULL)
+		while (runner->next)
 			runner = runner->next;
 		runner->next = new;
 	}

@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 12:04:06 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/10/29 18:58:37 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/16 16:15:40 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	*cast;
 
 	i = 0;
-	cast = (unsigned char*)b;
+	cast = b;
 	while (i < len)
 	{
-		cast[i] = (unsigned char)c;
+		cast[i] = c;
 		++i;
 	}
-	return ((void*)cast);
+	return (cast);
 }

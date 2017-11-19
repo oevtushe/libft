@@ -6,18 +6,13 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 07:43:41 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/14 11:02:28 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/16 17:42:39 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	int i;
-
 	if (s && f)
-	{
-		i = -1;
-		while (s[++i] != '\0')
-			f(&s[i]);
-	}
+		while (*s)
+			f(s++);
 }

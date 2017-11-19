@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 15:00:49 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/14 15:47:07 by oevtushe         ###   ########.fr       */
+/*   Created: 2017/11/19 14:14:51 by oevtushe          #+#    #+#             */
+/*   Updated: 2017/11/19 14:21:15 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strfnd(const char *str, char c)
-{
-	int i;
+#include "libft.h"
 
-	if (str)
+int		ft_strfnd(const char *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
 	{
-		i = -1;
-		while (str[++i] != '\0')
-			if (str[i] == c)
-				return (i);
+		if (s[i] == c)
+			return (i);
+		++i;
 	}
 	return (-1);
 }

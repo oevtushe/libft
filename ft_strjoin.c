@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 09:55:05 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/14 11:19:52 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/16 17:44:54 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		len1 = ft_strlen(s1);
 		len2 = ft_strlen(s2);
-		res = ft_strnew(sizeof(int) * (len1 + len2 + 1));
+		res = ft_strnew(len1 + len2);
 		if (res)
 		{
 			ft_strcat(res, s1);

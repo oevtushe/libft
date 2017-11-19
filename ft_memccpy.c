@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 09:43:34 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/12 16:34:50 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/16 16:29:59 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char	*src_cast;
 
 	i = 0;
-	c_cast = (unsigned char)c;
-	dst_cast = (unsigned char*)dst;
+	c_cast = c;
+	dst_cast = dst;
 	src_cast = (unsigned char*)src;
 	while (i < n)
 	{

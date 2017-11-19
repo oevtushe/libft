@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/14 11:21:29 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/19 14:20:07 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ char			*ft_strncat(char *s1, const char *s2, size_t n);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
-int				ft_strfnd(const char *str, char c);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strstr(const char *haystack, const char *needle);
@@ -86,8 +85,9 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_lstappend(t_list **lst, t_list *new);
-int				ft_lstlen(const t_list *lst);
+size_t			ft_lstlen(const t_list *lst);
 void			ft_swap(void *p1, void *p2, size_t size);
 char			*ft_freadline(int fd);
+int				ft_strfnd(const char *s, char c);
 
 #endif

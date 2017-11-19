@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 16:15:11 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/12 16:18:10 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/16 15:57:38 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static int		last_check(long int val, char symb, int sign)
 	if (ft_isdigit(symb))
 	{
 		if (!is_overflow(sign, symb, val))
-			return ((int)(val * 10 + symb - '0') * sign);
+			return ((val * 10 + symb - '0') * sign);
 		else
 			return (sign > 0 ? -1 : 0);
 	}
-	return (int)(val * sign);
+	return (val * sign);
 }
 
 int				ft_atoi(const char *str)

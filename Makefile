@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2017/11/14 10:45:11 by oevtushe         ###   ########.fr        #
+#    Updated: 2017/11/19 14:20:28 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,8 @@ OBJ=ft_bzero.o ft_memcpy.o ft_memcmp.o ft_memmove.o \
 	 ft_putstr_fd.o ft_putendl.o ft_putnbr.o ft_putnbr_fd.o \
 	 ft_itoa.o ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o \
 	 ft_lstiter.o ft_lstappend.o ft_memdup.o ft_lstlen.o ft_lstmap.o \
-	 ft_strfnd.o ft_strsplit.o ft_memcpy.o ft_memchr.o ft_putendl_fd.o \
-	 ft_memccpy.o ft_swap.o ft_freadline.o
+	 ft_strsplit.o ft_memcpy.o ft_memchr.o ft_putendl_fd.o \
+	 ft_memccpy.o ft_swap.o ft_freadline.o ft_strfnd.o
 DEPS=libft.h
 CFLAGS=-Wall -Werror -Wextra
 NAME=libft.a

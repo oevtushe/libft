@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 12:32:03 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/10/29 18:57:40 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/16 16:29:16 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	arr = (unsigned char*)s;
-	symb = (unsigned char)c;
+	symb = c;
 	while (i < n)
 	{
 		if (arr[i] == symb)
