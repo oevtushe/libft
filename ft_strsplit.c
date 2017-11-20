@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 12:20:08 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/19 18:04:40 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/11/20 08:45:08 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	char_arr_del(char ***arr, int ln)
 static char	**ft_ltsa(t_list *lst)
 {
 	char	**arr;
-	int		len;
+	size_t	len;
 	int		i;
 	char	*tmp;
 
