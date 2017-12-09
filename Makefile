@@ -41,3 +41,5 @@ fclean: clean
 	@rm -f $(NAME)
 re: fclean
 	@make
+
+.PHONY: all clean fclean re
