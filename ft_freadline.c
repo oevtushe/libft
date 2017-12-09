@@ -17,7 +17,7 @@
 
 static void	ft_del(void *data, size_t size)
 {
-	size = 0;
+	++size;
 	free(data);
 }
 
