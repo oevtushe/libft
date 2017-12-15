@@ -12,37 +12,20 @@
 
 #include "libft.h"
 
-static int		is_overflow(int sign, char val, long int cur)
+static int		last_check(unsigned long int val, int sign)
 {
-	long int diff;
-
-	diff = LONG_INT_MAX / 10 - cur;
-	if (diff >= 0)
-	{
-		if (diff > 0 || (sign > 0 \
-					&& ((val - '0' <= LONG_INT_MAX % 10) || \
-					(sign < 0 && val - '0' <= LONG_INT_MAX % 10 + 1))))
-			return (0);
-	}
-	return (1);
-}
-
-static int		last_check(long int val, char symb, int sign)
-{
-	if (ft_isdigit(symb))
-	{
-		if (!is_overflow(sign, symb, val))
-			return ((val * 10 + symb - '0') * sign);
-		else
-			return (sign > 0 ? -1 : 0);
-	}
-	return (val * sign);
+	if (val > LONG_INT_MAX && sign > 0)
+		return (-1);
+	else if (val > LONG_INT_MAX && sign < 0)
+		return (0);
+	else
+		return (val * sign);
 }
 
 int				ft_atoi(const char *str)
 {
 	int					i;
-	long int			res;
+	unsigned long int	res;
 	int					sign;
 	int					len;
 
@@ -62,7 +45,7 @@ int				ft_atoi(const char *str)
 		++i;
 	while (str[i] == '0')
 		++i;
-	while (++len < 18 && ft_isdigit(str[i]))
+	while (++len < 20 && ft_isdigit(str[i]))
 		res = res * 10 + str[i++] - '0';
-	return (last_check(res, str[i], sign));
+	return (last_check(res, sign));
 }
