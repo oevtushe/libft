@@ -13,6 +13,10 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/*
+ 	Allocates a new list node
+	Initiate the content by copy of @param content
+*/
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*node;
