@@ -6,17 +6,13 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/31 14:28:39 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/20 07:25:26 by oevtushe         ###   ########.fr       */
+/*   Updated: 2017/12/24 13:17:33 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-/*
- 	Allocates a new list node
-	Initiate the content by copy of @param content
-*/
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*node;
