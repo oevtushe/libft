@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2017/11/19 14:20:28 by oevtushe         ###   ########.fr        #
+#    Updated: 2017/12/24 12:54:31 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ NAME=libft.a
 all: $(NAME)
 $(NAME): $(OBJ)
 	@ar -rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 clean:
 	@rm -f $(OBJ)
 fclean: clean
