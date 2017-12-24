@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2017/12/24 12:54:31 by oevtushe         ###   ########.fr        #
+#    Updated: 2017/12/24 13:31:35 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,13 @@ OBJ=ft_bzero.o ft_memcpy.o ft_memcmp.o ft_memmove.o \
 	 ft_lstiter.o ft_lstappend.o ft_memdup.o ft_lstlen.o ft_lstmap.o \
 	 ft_strsplit.o ft_memcpy.o ft_memchr.o ft_putendl_fd.o \
 	 ft_memccpy.o ft_swap.o ft_freadline.o ft_strfnd.o
-DEPS=libft.h
+DEPS_DIR=includes
+DEPS := $(DEPS_DIR)/libft.h
 CFLAGS=-Wall -Werror -Wextra
 NAME=libft.a
 
 %.o: %.c $(DEPS)
-	@gcc $(CFLAGS) -c -o $@ $< -I.
+	@gcc $(CFLAGS) -c -o $@ $< -I$(DEPS_DIR)
 all: $(NAME)
 $(NAME): $(OBJ)
 	@ar -rc $(NAME) $(OBJ)
