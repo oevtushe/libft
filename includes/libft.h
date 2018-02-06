@@ -91,5 +91,6 @@ void			ft_swap(void *p1, void *p2, size_t size);
 char			*ft_freadline(int fd);
 int				ft_strfnd(const char *s, char c);
 char			*ft_itoabase(intmax_t val, unsigned int base);
+void			ft_str_realloc(char **str, size_t new_len);
 
 #endif

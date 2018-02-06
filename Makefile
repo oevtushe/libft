@@ -77,6 +77,7 @@ OBJ= ft_bzero.o \
 	 ft_swap.o \
 	 ft_freadline.o \
 	 ft_strfnd.o \
+	 ft_str_realloc.o \
 	 ft_count_words.o
 DEPS_DIR=includes
 DEPS := $(DEPS_DIR)/libft.h
