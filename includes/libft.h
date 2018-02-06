@@ -14,6 +14,7 @@
 # define _LIBFT_H
 
 # include <string.h>
+# include <inttypes.h>
 # define LONG_INT_MAX 9223372036854775807
 
 typedef struct	s_list
@@ -89,5 +90,6 @@ size_t			ft_lstlen(const t_list *lst);
 void			ft_swap(void *p1, void *p2, size_t size);
 char			*ft_freadline(int fd);
 int				ft_strfnd(const char *s, char c);
+char			*ft_itoabase(intmax_t val, unsigned int base);
 
 #endif

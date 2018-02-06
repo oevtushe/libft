@@ -29,6 +29,7 @@ OBJ= ft_bzero.o \
 	 ft_strnstr.o \
 	 ft_strncmp.o \
 	 ft_atoi.o \
+	 ft_itoabase.o \
 	 ft_isalpha.o \
 	 ft_isdigit.o \
 	 ft_isalnum.o \
