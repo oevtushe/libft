@@ -74,6 +74,7 @@ OBJ= ft_bzero.o \
 	 ft_memchr.o \
 	 ft_putendl_fd.o \
 	 ft_memccpy.o \
+	 ft_strconnect.o \
 	 ft_swap.o \
 	 ft_freadline.o \
 	 ft_strfnd.o \
