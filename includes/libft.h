@@ -15,7 +15,7 @@
 
 # include <string.h>
 # include <inttypes.h>
-# define LONG_INT_MAX 9223372036854775807
+# include <limits.h>
 
 typedef struct	s_list
 {
