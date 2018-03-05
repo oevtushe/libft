@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2017/12/24 13:31:35 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/05 14:09:30 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ CFLAGS=-Wall -Werror -Wextra
 NAME=libft.a
 
 %.o: %.c $(DEPS)
-	@echo "\033[36mCompiling: $@"
+	@echo "\033[36mCompile: $@"
 	@gcc $(CFLAGS) -c -o $@ $< -I$(DEPS_DIR)
 all: $(NAME)
 
