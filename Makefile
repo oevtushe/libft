@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/05 14:09:30 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/05 18:33:17 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,25 +80,39 @@ SRCS := ft_bzero.c \
 	 ft_strfnd.c \
 	 ft_str_realloc.c \
 	 ft_count_words.c
-OBJS := $(SRCS:%.c=%.o)
+OBJS_DIR := objs/
+OBJS := $(SRCS:%.c=$(OBJS_DIR)%.o)
 DEPS_DIR=includes
 DEPS := $(DEPS_DIR)/libft.h
 CFLAGS=-Wall -Werror -Wextra
 NAME=libft.a
 
-%.o: %.c $(DEPS)
+$(OBJS_DIR)%.o: %.c $(DEPS)
 	@echo "\033[36mCompile: $@"
 	@gcc $(CFLAGS) -c -o $@ $< -I$(DEPS_DIR)
 all: $(NAME)
+
+gnl: $(NAME) gnl/get_next_line.o
+	@echo "\033[32mAdding get_next_line...\033[m"
+	@gcc $(CFLAGS) -o $(OBJS_DIR)get_next_line.o -c gnl/get_next_line.c -Ignl -I$(DEPS_DIR)
+	@ar -r $(NAME) $(OBJS_DIR)get_next_line.o
+	@ranlib $(NAME)
+	@echo "\033[33mDone !"
 
 $(NAME): $(OBJS)
 	@echo "\033[32mMaking lib..."
 	@ar -rc $(NAME) $^
 	@ranlib $(NAME)
 	@echo "\033[33mDone !"
+
+$(OBJS): |$(OBJS_DIR)
+
+$(OBJS_DIR):
+	@mkdir $(OBJS_DIR)
+
 clean:
 	@echo "\033[31mCleaning..."
-	@rm -f $(OBJS)
+	@rm -rf $(OBJS_DIR)
 fclean: clean
 	@rm -f $(NAME)
 re: fclean
