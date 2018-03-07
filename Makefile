@@ -6,9 +6,11 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/07 11:30:00 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/07 14:28:24 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+include Colors.mk
 
 SRCS := ft_bzero.c \
 	 ft_memcpy.c \
@@ -79,30 +81,25 @@ SRCS := ft_bzero.c \
 	 ft_strfnd.c \
 	 ft_str_realloc.c \
 	 ft_count_words.c
-OBJS_DIR := objs/
-OBJS := $(SRCS:%.c=$(OBJS_DIR)%.o)
+
+OBJS_DIR := objs
+OBJS := $(SRCS:%.c=$(OBJS_DIR)/%.o)
 DEPS_DIR=includes
 DEPS := $(DEPS_DIR)/libft.h
 CFLAGS=-Wall -Werror -Wextra
 NAME=libft.a
 
-$(OBJS_DIR)%.o: %.c $(DEPS)
-	@echo "\033[36mCompile: $@"
+$(OBJS_DIR)/%.o: %.c $(DEPS)
+	@echo "$(CYAN)Compile: $@$(RESET)"
 	@gcc $(CFLAGS) -c -o $@ $< -I$(DEPS_DIR)
+
 all: $(NAME)
 
-gnl: $(NAME) gnl/get_next_line.o
-	@echo "\033[32mAdding get_next_line...\033[m"
-	@gcc $(CFLAGS) -o $(OBJS_DIR)get_next_line.o -c gnl/get_next_line.c -Ignl -I$(DEPS_DIR)
-	@ar -r $(NAME) $(OBJS_DIR)get_next_line.o
-	@ranlib $(NAME)
-	@echo "\033[33mDone !"
-
 $(NAME): $(OBJS)
-	@echo "\033[32mMaking lib..."
+	@echo "$(GREEN)Making lib...$(RESET)"
 	@ar -rc $(NAME) $^
 	@ranlib $(NAME)
-	@echo "\033[33mDone !"
+	@echo "$(YELLOW)Done !$(RESET)"
 
 $(OBJS): |$(OBJS_DIR)
 
@@ -110,7 +107,7 @@ $(OBJS_DIR):
 	@mkdir $(OBJS_DIR)
 
 clean:
-	@echo "\033[31mCleaning..."
+	@echo "$(RED)Cleaning...$(RESET)"
 	@rm -rf $(OBJS_DIR)
 fclean: clean
 	@rm -f $(NAME)
