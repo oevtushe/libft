@@ -6,13 +6,12 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/24 13:43:57 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/12/24 17:17:05 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/03/07 13:34:05 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "libft.h"
 #include "get_next_line.h"
 
 /*

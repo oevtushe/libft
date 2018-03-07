@@ -6,13 +6,14 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/24 13:14:27 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/12/24 17:16:55 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/03/07 13:34:18 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _GET_NEXT_LINE_H
 # define _GET_NEXT_LINE_H
 
+#include "libft.h"
 # define BUFF_SIZE 10
 
 typedef struct	s_stream
