@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/05 18:33:17 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/07 11:30:00 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,6 @@ SRCS := ft_bzero.c \
 	 ft_memccpy.c \
 	 ft_strconnect.c \
 	 ft_swap.c \
-	 ft_freadline.c \
 	 ft_strfnd.c \
 	 ft_str_realloc.c \
 	 ft_count_words.c

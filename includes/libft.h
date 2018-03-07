@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2017/11/19 14:20:07 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/03/07 11:30:18 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-char			*ft_freadline(int fd);
 
 /*
 ** List
