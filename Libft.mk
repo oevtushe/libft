@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/08 13:10:07 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/08 16:42:59 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ FT_SRCF				:= ft_bzero.c \
 					 ft_str_realloc.c \
 					 ft_count_words.c
 FT_DIR				?= .
-FT_NAME				:= libft.a
+FT_NAME				:= $(FT_DIR)/libft.a
 
 FT_SRCS				:= $(addprefix $(FT_DIR)/,$(FT_SRCF))
 
