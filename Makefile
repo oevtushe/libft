@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/08 16:42:57 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/08 17:09:29 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $(FT_NAME): $(OBJS)
 $(OBJS): |$(OBJS_DIRS)
 
 $(OBJS_DIRS):
-	@echo "$(DBOLD)$(GREEN)Dir $@ created.$(RESET)"
+	@echo "$(DBOLD)$(GREEN)Dir $(UNDERLINE)$@$(RESET) $(DBOLD)$(GREEN)created.$(RESET)"
 	@mkdir $@
 
 clean:
