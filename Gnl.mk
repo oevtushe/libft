@@ -6,9 +6,11 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/07 13:50:55 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/08 16:43:01 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/08 17:09:31 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+FT_DIR		?= .
 
 GNL_DIR		:= gnl
 GNL_DEPF	:= get_next_line.h
