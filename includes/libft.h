@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/03/07 11:30:18 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/03/09 08:43:00 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,6 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_lstappend(t_list **lst, t_list *new);
 size_t			ft_lstlen(const t_list *lst);
+void			ft_lstcorder(t_list **lst);
 
 #endif

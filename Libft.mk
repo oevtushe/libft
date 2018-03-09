@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/08 16:42:59 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/09 08:43:25 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,7 @@ FT_SRCF				:= ft_bzero.c \
 					 ft_swap.c \
 					 ft_strfnd.c \
 					 ft_str_realloc.c \
+					 ft_lstcorder.c \
 					 ft_count_words.c
 FT_DIR				?= .
 FT_NAME				:= $(FT_DIR)/libft.a
