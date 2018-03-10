@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/08 17:09:29 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/10 09:53:43 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,19 +15,8 @@ include Libft.mk
 
 OBJS_DIR		:= $(FT_DIR)/objs
 
-# Variable for futue modules. 
-OBJS_DIRS		:= $(OBJS_DIR)
-
 OBJS			:= $(FT_SRCS:$(FT_DIR)/%.c=$(OBJS_DIR)/%.o)
 CFLAGS			:= -Wall -Werror -Wextra
-
-ifeq ($(GNL),on)
-include Gnl.mk
-FT_SRCS			+= $(GNL_SRCS)
-FT_DEPS			+= $(GNL_DEPS)
-OBJS			+= $(GNL_SRCS:$(FT_DIR)/%.c=$(OBJS_DIR)/%.o)
-OBJS_DIRS		+= $(OBJS_DIR)/$(GNL_DIR)
-endif
 
 all: $(FT_NAME)
 
@@ -41,9 +30,9 @@ $(FT_NAME): $(OBJS)
 	@ranlib $(FT_NAME)
 	@echo "$(CYAN)$(BOLD)Done !$(RESET)"
 
-$(OBJS): |$(OBJS_DIRS)
+$(OBJS): |$(OBJS_DIR)
 
-$(OBJS_DIRS):
+$(OBJS_DIR):
 	@echo "$(DBOLD)$(GREEN)Dir $(UNDERLINE)$@$(RESET) $(DBOLD)$(GREEN)created.$(RESET)"
 	@mkdir $@
 
