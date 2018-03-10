@@ -86,8 +86,10 @@ FT_SRCF				:= ft_bzero.c \
 FT_DIR				?= .
 FT_NAME				:= $(FT_DIR)/libft.a
 
-FT_SRCS				:= $(addprefix $(FT_DIR)/,$(FT_SRCF))
-
 FT_DEPS_DIR			:= $(FT_DIR)/includes
 FT_DEPF				:= libft.h
 FT_DEPS				:= $(addprefix $(FT_DEPS_DIR)/,$(FT_DEPF))
+
+FT_SRCS				:= $(addprefix $(FT_DIR)/,$(FT_SRCF))
+FT_OBJS_DIR			:= $(FT_DIR)/objs
+FT_OBJS				:= $(FT_SRCS:$(FT_DIR)/%.c=$(FT_OBJS_DIR)/%.o)
