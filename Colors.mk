@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/07 14:15:57 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/07 14:42:52 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/10 14:57:52 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,7 @@ BOLD 		:= $(call COLOR,1)
 DBOLD		:= $(call COLOR,2)
 NBOLD		:= $(call COLOR,22)
 UNDERLINE	:= $(call COLOR,4)
-NUNDERLINE	:= $(call COLOR,4)
 INVERSE		:= $(call COLOR,7)
-NINVERSE	:= $(call COLOR,7)
 RESET		:= $(call COLOR)
 
 # Text colors
