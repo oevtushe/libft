@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/03/10 10:00:05 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/03/10 10:37:23 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,11 @@ char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
 int				ft_strfnd(const char *s, char c);
 char			*ft_itoabase(intmax_t val, unsigned int base);
+char			*ft_uitoabase_gen(uintmax_t val, int sign, unsigned int base);
 void			ft_str_realloc(char **str, size_t new_len);
+void			ft_strconnect(char **str1, const char *str2, int side);
+void			ft_strcntllr(char **str, size_t new_len, char filler, int side);
+void			ft_strtoupper(char *str);
 
 /*
 ** Other
@@ -100,6 +104,8 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+void			ft_putstr_ln(const char *str, size_t ln);
+void			ft_spsign(intmax_t val, uintmax_t *uval, int *sign);
 
 /*
 ** List

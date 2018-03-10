@@ -77,6 +77,11 @@ FT_SRCF				:= ft_bzero.c \
 					 ft_strfnd.c \
 					 ft_str_realloc.c \
 					 ft_lstcorder.c \
+					 ft_uitoabase_gen.c \
+					 ft_putstr_ln.c \
+					 ft_spsign.c \
+					 ft_strcntllr.c \
+					 ft_strtoupper.c \
 					 ft_count_words.c
 FT_DIR				?= .
 FT_NAME				:= $(FT_DIR)/libft.a
