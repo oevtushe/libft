@@ -6,12 +6,11 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/09 08:43:25 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/10 14:40:46 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FT_SRCF				:= ft_bzero.c \
-					 ft_memcpy.c \
 					 ft_memcmp.c \
 					 ft_memmove.c \
 					 ft_memset.c \
@@ -56,7 +55,6 @@ FT_SRCF				:= ft_bzero.c \
 					 ft_putendl.c \
 					 ft_putchar_fd.c \
 					 ft_putstr_fd.c \
-					 ft_putendl.c \
 					 ft_putnbr.c \
 					 ft_putnbr_fd.c \
 					 ft_itoa.c \
