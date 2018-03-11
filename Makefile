@@ -6,14 +6,14 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/10 16:55:58 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/11 12:41:02 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include Colors.mk
 include Libft.mk
 
-CFLAGS			:= -Wall -Werror -Wextra -g
+CFLAGS			:= -Wall -Werror -Wextra
 
 all: $(FT_NAME)
 

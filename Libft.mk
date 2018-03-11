@@ -6,9 +6,17 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/10 14:40:46 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/11 13:06:12 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
+# Simply include this file in your Makefile and write rule like this.
+# Dont forget to decalre FT_DIR var to current libft directory.
+#
+#$(NAME): $(FT_OBJS) ...
+#$(FT_OBJS_DIR)/%.o: $(FT_DIR)/%.c $(FT_DEPS)
+#	@$(MAKE) obj $(MFLAGS) $(FT_DIR)
 
 FT_SRCF				:= ft_bzero.c \
 					 ft_memcmp.c \
