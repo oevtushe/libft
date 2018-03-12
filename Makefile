@@ -6,41 +6,43 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/28 14:24:58 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/11 12:41:02 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/12 10:24:37 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-include Colors.mk
+include Pretty.mk
 include Libft.mk
 
 CFLAGS			:= -Wall -Werror -Wextra
+CC				:= gcc
+AR				:= ar
+ARFLAGS			:= rc
+RM				:= rm -rf
 
 all: $(FT_NAME)
 
 obj: $(FT_OBJS)
 
 $(FT_OBJS_DIR)/%.o: %.c $(FT_DEPS)
-	@echo "$(CYAN)Compile:$(RESET) $(UNDERLINE)$(GREEN)$@$(RESET)"
-	@gcc $(CFLAGS) -c -o $@ $< -I$(FT_DEPS_DIR)
+	@$(call COMPILE_P,$(@:$(FT_DIR)/%=$(RPTH)/%))
+	@$(CC) $(CFLAGS) -o $@ -c $< -I$(FT_DEPS_DIR)
 
 $(FT_NAME): $(FT_OBJS)
-	@echo "$(GRAY)Making lib...$(RESET)"
-	@ar -rc $(FT_NAME) $?
+	@$(call MKLIB_P)
+	@$(AR) $(ARFLAGS) $(FT_NAME) $?
 	@ranlib $(FT_NAME)
-	@echo "$(CYAN)$(BOLD)Done !$(RESET)"
+	@$(call DONE_P)
 
 $(FT_OBJS): |$(FT_OBJS_DIR)
 
 $(FT_OBJS_DIR):
-	@echo "$(DBOLD)$(GREEN)Dir $(UNDERLINE)$@$(RESET) $(DBOLD)$(GREEN)created.$(RESET)"
+	@$(call DIR_CREATE_P,$(FT_OBJS_DIR:$(FT_DIR)/%=$(RPTH)/%))
 	@mkdir $@
 
 clean:
-	@echo "$(RED)Dir $(UNDERLINE)$(FT_OBJS_DIR)$(RESET) $(RED)deleted.$(RESET)"
-	@rm -rf $(FT_OBJS_DIR)
+	@$(RM) $(FT_OBJS_DIR)
 fclean: clean
-	@echo "$(RED)File $(UNDERLINE)$(FT_NAME)$(RESET) $(RED)deleted.$(RESET)"
-	@rm -f $(FT_NAME)
+	@$(RM) $(FT_NAME)
 re: fclean
 	@$(MAKE) -s
 

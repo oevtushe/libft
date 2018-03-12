@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/11 13:06:12 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/12 10:38:30 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,3 +101,7 @@ FT_DEPS				:= $(addprefix $(FT_DEPS_DIR)/,$(FT_DEPF))
 FT_SRCS				:= $(addprefix $(FT_DIR)/,$(FT_SRCF))
 FT_OBJS_DIR			:= $(FT_DIR)/objs
 FT_OBJS				:= $(FT_SRCS:$(FT_DIR)/%.c=$(FT_OBJS_DIR)/%.o)
+
+# Var for relative path. Simply run this make with
+# RPTH=<relative path> to correct print directories.
+RPTH				?= $(FT_DIR)
