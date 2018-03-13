@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/07 14:15:57 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/12 09:47:14 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/12 14:15:39 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,12 @@ COMPILE_P		= echo "$(MAGENTA)Compile: \
 					$(RESET)$(GRAY)$(UNDERLINE)$(1)$(RESET)"
 DIR_CREATE_P	= echo "$(DBOLD)$(GREEN)Dir \
 				  	$(UNDERLINE)$(1)$(RESET) $(GREEN)$(DBOLD)created.$(RESET)"
-SUBMAKE_P		= echo "---------- $(BOLD)Make $(UNDERLINE)$(YELLOW)$(1)$(RESET) ----------"
-MKLIB_P			= echo "$(GREEN)Making lib.$(RESET)"
+SUBMAKE_P		= echo "---------- $(BOLD)Make \
+				  		$(UNDERLINE)$(YELLOW)$(1)$(RESET) ----------"
+MKLIB_P			= echo "$(GREEN)Making lib $(UNDERLINE)$(1)$(RESET)$(GREEN).$(RESET)"
 DONE_P			= echo "$(BOLD)Done !$(RESET)"
+EXEC_P			= echo "$(GRAY)$(BOLD)Executable \
+				  	$(UNDERLINE)$(1)$(RESET) $(GRAY)$(BOLD)created !$(RESET)"
 
 
 # Special options
