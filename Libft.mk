@@ -6,17 +6,57 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/12 10:38:30 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/03/13 09:12:18 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# FT_DEPS FT_SRCS use this variable. So if you need to get right
+# dependencies don't forget to define FT_DIR before including this file.
+FT_DIR				?= .
 
-# Simply include this file in your Makefile and write rule like this.
-# Dont forget to decalre FT_DIR var to current libft directory.
+# Var for relative path.
+# If you need correct output directories when you compile files or create
+# directories/archives you need to replace relative path to your working directory
+# (where the make is. As usual it's just './') by this variable.
+# Variable is set by outside Makefile.
+# Examples:
+# 	Suppose your working tree look like this:
 #
-#$(NAME): $(FT_OBJS) ...
-#$(FT_OBJS_DIR)/%.o: $(FT_DIR)/%.c $(FT_DEPS)
-#	@$(MAKE) obj $(MFLAGS) $(FT_DIR)
+# 		libftmulti
+# 		   /\
+# 		 /    \
+#	   gnl	   libft
+#
+# In gnl and libft dirs you have a Makefile as in libftmulti.
+# When you run gnl and libft Makefiles from libftmulti Makefile
+# submakefiles will print path to files he working on as './'.
+# So that the file gnl/get_next_line.c will be printed as ./get_next_line.c
+# which is not correct.
+# To fix that problem use in yours print functions RPTH variable instead
+# of *_DIR.
+# Example of use:
+# 		@$(call COMPILE_P,$(@:$(FT_DIR)/%=$(RPTH)/%))
+# 		Where $@ is obj files. There you replace './' by value in RPTH.
+# Of course you need to pass correct relative path in libftmulti path.
+# (make <targer> RPTH=<relative path>)
+RPTH				?= $(FT_DIR)
+
+# Example of use this header in your Makefile:
+# *
+# *
+# FT_DIR 	:= <libft path>
+# include $(FT_DIR)/Libft.mk
+# *
+# *
+# If you want to compile only objs files:
+# $(NAME): $(FT_OBJS) ...
+# $(FT_OBJS_DIR)/%.o: $(FT_DIR)/%.c $(FT_DEPS)
+#	 @$(MAKE) obj RPTH=<relative path to libft> $(MFLAGS) $(FT_DIR)
+#
+# Or you want lib:
+# $(NAME): $(FT_OBJS) ...
+# $(FT_NAME): $(FT_SRCS) $(FT_DEPS)
+# 	 @$(MAKE) RPTH=<relative path to libft> $(MFLAGS) $(FT_DIR)
 
 FT_SRCF				:= ft_bzero.c \
 					 ft_memcmp.c \
@@ -91,7 +131,6 @@ FT_SRCF				:= ft_bzero.c \
 					 ft_strcntllr.c \
 					 ft_strtoupper.c \
 					 ft_count_words.c
-FT_DIR				?= .
 FT_NAME				:= $(FT_DIR)/libft.a
 
 FT_DEPS_DIR			:= $(FT_DIR)/includes
@@ -101,7 +140,3 @@ FT_DEPS				:= $(addprefix $(FT_DEPS_DIR)/,$(FT_DEPF))
 FT_SRCS				:= $(addprefix $(FT_DIR)/,$(FT_SRCF))
 FT_OBJS_DIR			:= $(FT_DIR)/objs
 FT_OBJS				:= $(FT_SRCS:$(FT_DIR)/%.c=$(FT_OBJS_DIR)/%.o)
-
-# Var for relative path. Simply run this make with
-# RPTH=<relative path> to correct print directories.
-RPTH				?= $(FT_DIR)
