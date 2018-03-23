@@ -84,6 +84,7 @@ void			ft_str_realloc(char **str, size_t new_len);
 void			ft_strconnect(char **str1, const char *str2, int side);
 void			ft_strcntllr(char **str, size_t new_len, char filler, int side);
 void			ft_strtoupper(char *str);
+int				ft_isnumber(char *str);
 
 /*
 ** Other
