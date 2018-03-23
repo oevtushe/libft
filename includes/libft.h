@@ -120,6 +120,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_lstappend(t_list **lst, t_list *new);
 size_t			ft_lstlen(const t_list *lst);
 void			ft_lstcorder(t_list **lst);
+void			ft_lstswap(t_list *lst, unsigned int p1, unsigned int p2);
 t_list			*ft_lstget(t_list *lst, unsigned int idx);
 
 #endif

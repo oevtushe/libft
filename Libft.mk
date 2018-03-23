@@ -105,6 +105,7 @@ FT_SRCF				:= ft_bzero.c \
 					 ft_spsign.c \
 					 ft_strcntllr.c \
 					 ft_strtoupper.c \
+					 ft_lstswap.c \
 					 ft_lstget.c \
 					 ft_count_words.c
 FT_NAME				:= $(FT_DIR)/libft.a
