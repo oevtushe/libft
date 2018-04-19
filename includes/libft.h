@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/03/23 09:21:15 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/04/19 16:12:52 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void			ft_strconnect(char **str1, const char *str2, int side);
 void			ft_strcntllr(char **str, size_t new_len, char filler, int side);
 void			ft_strtoupper(char *str);
 int				ft_isnumber(char *str);
+int				ft_isvldint(char *str);
 
 /*
 ** Other

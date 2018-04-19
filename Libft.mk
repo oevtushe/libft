@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/03/23 09:13:15 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/04/19 16:13:14 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ FT_SRCF				:= ft_bzero.c \
 					 ft_isascii.c \
 					 ft_isnumber.c \
 					 ft_isprint.c \
+					 ft_isvldint.c \
 					 ft_toupper.c \
 					 ft_tolower.c \
 					 ft_memalloc.c \
