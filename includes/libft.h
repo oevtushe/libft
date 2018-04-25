@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/04/19 16:12:52 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/04/25 13:56:26 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_ln(const char *str, size_t ln);
 void			ft_spsign(intmax_t val, uintmax_t *uval, int *sign);
+int				ft_intln(int n);
 
 /*
 ** List

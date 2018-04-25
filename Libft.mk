@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/04/19 16:13:14 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/04/25 13:57:04 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ FT_SRCF				:= ft_bzero.c \
 					 ft_strncmp.c \
 					 ft_atoi.c \
 					 ft_itoabase.c \
+					 ft_intln.c \
 					 ft_isalpha.c \
 					 ft_isdigit.c \
 					 ft_isalnum.c \
