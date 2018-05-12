@@ -6,17 +6,17 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 15:59:08 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/04/19 16:13:15 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/05/12 17:07:13 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	vldval(unsigned int res, int sign, char *val, int i)
+static int	vldval(unsigned int res, int sign, char *val)
 {
 	if ((sign > 0 && res > INT_MAX) ||
 			(sign < 0 && res > (-1L * INT_MIN)) ||
-				(val[i]))
+				(*val))
 		return (0);
 	return (1);
 }
@@ -44,9 +44,11 @@ int			ft_isvldint(char *str)
 	}
 	else if (str[i] == '+')
 		++i;
+	if (str[i] == '\0')
+		return (0);
 	while (str[i] == '0')
 		++i;
 	while (++len < 10 && ft_isdigit(str[i]))
 		res = res * 10 + str[i++] - '0';
-	return (vldval(res, sign, str, i));
+	return (vldval(res, sign, &str[i]));
 }
