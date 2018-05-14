@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/04/25 13:56:26 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/05/14 18:11:02 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct			s_list_de
+{
+	void				*content;
+	size_t				content_size;
+	struct s_list_de	*next;
+	struct s_list_de	*prev;
+}						t_list_de;
 
 /*
 ** Memory
@@ -125,5 +133,21 @@ size_t			ft_lstlen(const t_list *lst);
 void			ft_lstcorder(t_list **lst);
 void			ft_lstswap(t_list *lst, unsigned int p1, unsigned int p2);
 t_list			*ft_lstget(t_list *lst, unsigned int idx);
+
+/*
+** Doubly linked list
+*/
+
+t_list_de		*ft_lstnew_de(void const *content, size_t content_size);
+void			ft_lstdelone_de(t_list_de **alst, void (*del)(void*, size_t));
+void			ft_lstdel_de(t_list_de **alst, void (*del)(void*, size_t));
+void			ft_lstadd_de(t_list_de **alst, t_list_de *new);
+void			ft_lstiter_de(t_list_de *lst, void (*f)(t_list_de *elem));
+t_list_de		*ft_lstmap_de(t_list_de *lst, t_list_de *(*f)(t_list_de *elem));
+void			ft_lstappend_de(t_list_de **lst, t_list_de *new);
+size_t			ft_lstlen_de(const t_list_de *lst);
+void			ft_lstcorder_de(t_list_de **lst);
+void			ft_lstswap_de(t_list_de *lst, unsigned int p1, unsigned int p2);
+t_list_de		*ft_lstget_de(t_list_de *lst, unsigned int idx);
 
 #endif

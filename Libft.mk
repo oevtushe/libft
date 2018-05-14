@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/04/25 13:57:04 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/05/14 18:07:19 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,7 +110,19 @@ FT_SRCF				:= ft_bzero.c \
 					 ft_strtoupper.c \
 					 ft_lstswap.c \
 					 ft_lstget.c \
+					 ft_lstnew_de.c \
+					 ft_lstdelone_de.c \
+					 ft_lstdel_de.c \
+					 ft_lstadd_de.c \
+					 ft_lstiter_de.c \
+					 ft_lstmap_de.c \
+					 ft_lstappend_de.c \
+					 ft_lstlen_de.c \
+					 ft_lstcorder_de.c \
+					 ft_lstswap_de.c \
+					 ft_lstget_de.c \
 					 ft_count_words.c
+
 FT_NAME				:= $(FT_DIR)/libft.a
 
 FT_DEPS_DIR			:= $(FT_DIR)/includes
