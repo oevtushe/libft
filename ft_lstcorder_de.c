@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 17:46:29 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/05/14 17:58:30 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/05/15 18:04:08 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	ft_lstcorder_de(t_list_de **lst)
 	next = NULL;
 	if (lst)
 	{
-		cur = *lst;
-		while (cur)
+		next = *lst;
+		while (next)
 		{
+			cur = next;
 			next = cur->next;
 			cur->next = cur->prev;
-			cur = next;
+			cur->prev = next;
 		}
-		cur->prev = NULL;
 		*lst = cur;
 	}
 }

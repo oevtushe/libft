@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/05/14 18:11:02 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/05/15 17:07:44 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,5 +149,7 @@ size_t			ft_lstlen_de(const t_list_de *lst);
 void			ft_lstcorder_de(t_list_de **lst);
 void			ft_lstswap_de(t_list_de *lst, unsigned int p1, unsigned int p2);
 t_list_de		*ft_lstget_de(t_list_de *lst, unsigned int idx);
+// ft_list_safe_del_de
+// delete tail && delete head
 
 #endif
