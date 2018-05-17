@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 17:33:56 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/05/14 18:11:54 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/05/17 12:45:36 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	ft_lstadd_de(t_list_de **alst, t_list_de *new)
 	if (alst && new)
 	{
 		new->next = *alst;
-		(*alst)->prev = new;
+		if(*alst)
+			(*alst)->prev = new;
 		*alst = new;
 	}
 }
