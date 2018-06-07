@@ -6,14 +6,14 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 08:48:55 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/01/30 09:48:11 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/06/07 12:12:40 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <stdlib.h>
 
-static int		count_blocks(const char *str, char c)
+static int	count_blocks(const char *str, char c)
 {
 	int		wc;
 	int		state;
@@ -34,7 +34,7 @@ static int		count_blocks(const char *str, char c)
 	return (wc);
 }
 
-static void		clear_arr(char ***wa)
+static void	clear_arr(char ***wa)
 {
 	int	idx;
 
@@ -48,7 +48,7 @@ static void		clear_arr(char ***wa)
 	}
 }
 
-static int		safety_add(char **wa, int *wa_idx, int end, const char *str)
+static int	safety_add(char **wa, int *wa_idx, int end, const char *str)
 {
 	char	*sub;
 
