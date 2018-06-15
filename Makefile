@@ -10,8 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-include Pretty.mk
-include Libft.mk
+# In case of FT_DIR is passed as env variable.
+override FT_DIR	:= .
+
+include 		Pretty.mk
+include 		Libft.mk
 
 CFLAGS			:= -Wall -Werror -Wextra
 CC				:= gcc
