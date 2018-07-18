@@ -17,7 +17,7 @@ DIR_CREATE_P	= echo "$(DBOLD)$(GREEN)Dir \
 				  	$(UNDERLINE)$(1)$(RESET) $(GREEN)$(DBOLD)created.$(RESET)"
 SUBMAKE_P		= echo "---------- $(BOLD)Make \
 				  		$(UNDERLINE)$(YELLOW)$(1)$(RESET) ----------"
-MKLIB_P			= echo "$(GREEN)Making lib $(UNDERLINE)$(1)$(RESET)$(GREEN).$(RESET)"
+MKLIB_P			= echo "$(GREEN)Making lib$(UNDERLINE)$(1)$(RESET)$(GREEN).$(RESET)"
 DONE_P			= echo "$(BOLD)Done !$(RESET)"
 EXEC_P			= echo "$(GRAY)$(BOLD)Executable \
 				  	$(UNDERLINE)$(1)$(RESET) $(GRAY)$(BOLD)created !$(RESET)"
