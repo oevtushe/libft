@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/07/18 17:31:12 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/07/23 18:16:20 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <limits.h>
 
 # define ABS(x) (x) >= 0 ? (x) : -(x)
+
+typedef struct			s_pair
+{
+	void				*fst;
+	void				*scd;
+}						t_pair;
 
 typedef struct			s_list
 {
@@ -168,5 +174,8 @@ void					ft_lstswap_de(t_list_de *lst, unsigned int p1,
 							unsigned int p2);
 t_list_de				*ft_lstget_de(t_list_de *lst, unsigned int idx);
 void					ft_lst_sdn(t_list_de **dil);
+
+t_pair					*ft_newpair(void *fst, size_t fst_size, void *scd, size_t scd_size);
+char					*ft_strimplode(char **arr, int size, char *glue);
 
 #endif
