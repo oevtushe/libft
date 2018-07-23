@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/07/23 18:16:20 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/07/23 19:31:01 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ void					ft_strtoupper(char *str);
 int						ft_isnumber(char *str);
 int						ft_isvldint(char *str);
 int						ft_count_words(const char *str);
+int						ft_strchcnt(char *line, char c);
 
 /*
 ** Other
@@ -135,6 +136,10 @@ void					ft_putnbr_fd(int n, int fd);
 void					ft_putstr_ln(const char *str, size_t ln);
 void					ft_spsign(intmax_t val, uintmax_t *uval, int *sign);
 int						ft_intln(int n);
+int						ft_arrcontains(void **arr, int size, void *data,\
+							int (*check)(void *elem, void *data));
+size_t					ft_parrlen_zt(void **arr);
+void					ft_parrdel_zt(void ***arr);
 
 /*
 ** List
@@ -152,6 +157,13 @@ void					ft_lstcorder(t_list **lst);
 void					ft_lstswap(t_list *lst, unsigned int p1,
 							unsigned int p2);
 t_list					*ft_lstget(t_list *lst, unsigned int idx);
+void					*ft_lstdequeue(t_list **root);
+void					ft_lstdelsafe(t_list **lst, void *data, \
+							int (*cmp)(void *cdata, void *data), void (*del)(void *, size_t));
+int						ft_lstgetidx(t_list *lst, void *data, \
+							int (*check)(t_list *elem, void *data));
+void					*ft_lstpop(t_list **lst);
+void					*ft_lstpeeklast(t_list *lst);
 
 /*
 ** Doubly linked list

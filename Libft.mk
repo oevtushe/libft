@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/07/23 18:15:41 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/07/23 19:45:41 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -123,6 +123,15 @@ FT_SRCF				:= ft_bzero.c			\
 					   ft_lstget_de.c		\
 					   ft_strimplode.c		\
 					   ft_newpair.c			\
+					   ft_arrcontains.c		\
+					   ft_lstdelsafe.c		\
+					   ft_lstdequeue.c		\
+					   ft_lstgetidx.c		\
+					   ft_lstpeeklast.c		\
+					   ft_lstpop.c			\
+					   ft_parrdel_zt.c		\
+					   ft_parrlen_zt.c		\
+					   ft_strchcnt.c		\
 					   ft_count_words.c
 
 FT_NAME				:= $(FT_DIR)/libft.a
