@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 19:21:50 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/07/23 19:22:12 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/03 15:38:07 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 **			-1 otherwise
 */
 
-int		ft_lstgetidx(t_list *lst, void *data, int (*check)(t_list *elem, void *data))
+int		ft_lstgetidx(t_list *lst, void *data, int (*check)(void *elem, void *data))
 {
 	int i;
 
@@ -30,7 +30,7 @@ int		ft_lstgetidx(t_list *lst, void *data, int (*check)(t_list *elem, void *data
 	{
 		while (lst)
 		{
-			if (check(lst, data))
+			if (check(lst->content, data))
 				return (i);
 			lst = lst->next;
 			++i;

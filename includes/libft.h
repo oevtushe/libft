@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/03 15:14:54 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/03 19:15:35 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ void					*ft_lstdequeue(t_list **root);
 void					ft_lstdelsafe(t_list **lst, void *data, \
 							int (*cmp)(void *cdata, void *data), void (*del)(void *, size_t));
 int						ft_lstgetidx(t_list *lst, void *data, \
-							int (*check)(t_list *elem, void *data));
+							int (*check)(void *elem, void *data));
 void					*ft_lstpop(t_list **lst);
 void					*ft_lstpeeklast(t_list *lst);
 
