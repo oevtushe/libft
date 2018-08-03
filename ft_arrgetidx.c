@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrcontains.c                                   :+:      :+:    :+:   */
+/*   ft_arrgetidx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/05 11:42:33 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/07/23 19:03:30 by oevtushe         ###   ########.fr       */
+/*   Created: 2018/08/01 18:16:19 by oevtushe          #+#    #+#             */
+/*   Updated: 2018/08/02 12:07:11 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Function checks if array of pointers contains a given data
+** Function returns an idx of searched data
 ** Comparison is made by function @param check
 **
 ** check function has to return 1 if elements is equall, 0 otherwise
@@ -19,7 +19,7 @@
 **				0 otherwise
 */
 
-int		ft_arrcontains(void **arr, int size, void *data, int (*check)(void *elem, void *data))
+int		ft_arrgetidx(void **arr, int size, void *data, int (*check)(void *elem, void *data))
 {
 	int i;
 
@@ -27,8 +27,11 @@ int		ft_arrcontains(void **arr, int size, void *data, int (*check)(void *elem, v
 	if (arr && check)
 	{
 		while (i < size)
-			if (check(arr[i++], data))
-				return (1);
+		{
+			if (check(arr[i], data))
+				return (i);
+			++i;
+		}
 	}
-	return (0);
+	return (-1);
 }

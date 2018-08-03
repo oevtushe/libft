@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/07/23 19:31:01 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/03 15:14:54 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,8 +136,6 @@ void					ft_putnbr_fd(int n, int fd);
 void					ft_putstr_ln(const char *str, size_t ln);
 void					ft_spsign(intmax_t val, uintmax_t *uval, int *sign);
 int						ft_intln(int n);
-int						ft_arrcontains(void **arr, int size, void *data,\
-							int (*check)(void *elem, void *data));
 size_t					ft_parrlen_zt(void **arr);
 void					ft_parrdel_zt(void ***arr);
 
@@ -189,5 +187,6 @@ void					ft_lst_sdn(t_list_de **dil);
 
 t_pair					*ft_newpair(void *fst, size_t fst_size, void *scd, size_t scd_size);
 char					*ft_strimplode(char **arr, int size, char *glue);
+int						ft_arrgetidx(void **arr, int size, void *data, int (*check)(void *elem, void *data));
 
 #endif
