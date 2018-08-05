@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/03 19:15:35 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/05 14:01:34 by sasha            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 # include <limits.h>
 
 # define ABS(x) (x) >= 0 ? (x) : -(x)
+# define GNL_BUFF_SIZE 10
+
+typedef struct	s_stream
+{
+	int		fd;
+	char	*buff;
+}				t_stream;
 
 typedef struct			s_pair
 {
@@ -138,6 +145,7 @@ void					ft_spsign(intmax_t val, uintmax_t *uval, int *sign);
 int						ft_intln(int n);
 size_t					ft_parrlen_zt(void **arr);
 void					ft_parrdel_zt(void ***arr);
+int						get_next_line(const int fd, char **line);
 
 /*
 ** List

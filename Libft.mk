@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/08/03 15:15:03 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/08/05 13:59:19 by sasha            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,14 +132,20 @@ FT_SRCF				:= ft_bzero.c			\
 					   ft_parrlen_zt.c		\
 					   ft_strchcnt.c		\
 					   ft_arrgetidx.c		\
+					   get_next_line.c		\
 					   ft_count_words.c
 
 FT_NAME				:= $(FT_DIR)/libft.a
 
 FT_DEPS_DIR			:= $(FT_DIR)/includes
+FT_SRCS_DIR			:= $(FT_DIR)/srcs
 FT_DEPF				:= libft.h
 FT_DEPS				:= $(addprefix $(FT_DEPS_DIR)/,$(FT_DEPF))
 
-FT_SRCS				:= $(addprefix $(FT_DIR)/,$(FT_SRCF))
+FT_SRCS				:= $(addprefix $(FT_SRCS_DIR)/,$(FT_SRCF))
 FT_OBJS_DIR			:= $(FT_DIR)/objs
-FT_OBJS				:= $(FT_SRCS:$(FT_DIR)/%.c=$(FT_OBJS_DIR)/%.o)
+FT_OBJS				:= $(FT_SRCS:$(FT_SRCS_DIR)/%.c=$(FT_OBJS_DIR)/%.o)
+FT_ALL_DEPS_DIRS	:= $(FT_DEPS_DIR)
+FT_ALL_DEPS			:= $(FT_DEPS)
+FT_ALL_OBJS_DIRS	:= $(FT_OBJS_DIR)
+FT_ALL_OBJS			:= $(FT_OBJS)
