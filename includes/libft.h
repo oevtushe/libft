@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/03 19:15:35 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/06 10:34:37 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,6 +186,7 @@ t_list_de				*ft_lstget_de(t_list_de *lst, unsigned int idx);
 void					ft_lst_sdn(t_list_de **dil);
 
 t_pair					*ft_newpair(void *fst, size_t fst_size, void *scd, size_t scd_size);
+t_pair					*ft_newpair_cc(void *fst, void *scd);
 char					*ft_strimplode(char **arr, int size, char *glue);
 int						ft_arrgetidx(void **arr, int size, void *data, int (*check)(void *elem, void *data));
 

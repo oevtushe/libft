@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/08/03 15:15:03 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/08/06 10:35:21 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,6 +132,7 @@ FT_SRCF				:= ft_bzero.c			\
 					   ft_parrlen_zt.c		\
 					   ft_strchcnt.c		\
 					   ft_arrgetidx.c		\
+					   ft_newpair_cc.c		\
 					   ft_count_words.c
 
 FT_NAME				:= $(FT_DIR)/libft.a
