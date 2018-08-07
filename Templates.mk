@@ -6,7 +6,7 @@
 #    By: sasha <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/05 12:30:58 by sasha             #+#    #+#              #
-#    Updated: 2018/08/05 16:59:34 by sasha            ###   ########.fr        #
+#    Updated: 2018/08/07 15:32:41 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,22 +67,22 @@ RM			 		:= rm -rf
 AR			 		:= ar
 CC			 		:= gcc
 ARFLAGS		 		:= rc
-CFLAGS		 		:= #-Wall -Werror -Wextra
+CFLAGS		 		:= -Wall -Werror -Wextra
 MFLAGS		 		:= --no-print-directory -C
 
-define BINARY_template1 =
+define BINARY_template1
 $$($(1)_NAME): $$($(1)_ALL_OBJS)
 	@$$(call EXEC_P,$$@)
 	@$$(CC) $$(CFLAGS) -o $$($(1)_NAME) $$^ $$($(2)_NAME)
 endef
 
-define BINARY_template2 =
+define BINARY_template2
 $$($(1)_NAME): $$($(1)_ALL_EXTRA_LIBS) $$($(1)_OBJS)
 	@$$(call EXEC_P,$$@)
 	@$$(CC) $$(CFLAGS) -o $$($(1)_NAME) $$^ $$($(2)_NAME)
 endef
 
-define BASIC_template =
+define BASIC_template
 ifeq ($$(MAKELEVEL),0)
 WCOMPILE_P = @$(call COMPILE_P,$$@)
 WDIR_CREATE_P = @$(call DIR_CREATE_P,$$@)
@@ -105,17 +105,17 @@ re: fclean all
 .PHONY: all clean fclean re obj
 endef
 
-define EXTRALIB_template1 = 
+define EXTRALIB_template1
 $$($(1)_OBJS_DIR)/%.o: $$($(1)_SRCS_DIR)/%.c $$($(1)_DEPS)
 	@$$(MAKE) $(3) RPTH=$$($(1)_DIR) $$(MFLAGS) $$($(1)_DIR)
 endef
 
-define EXTRALIB_template2 = 
+define EXTRALIB_template2
 $$($(1)_NAME): $$($(1)_ALL_SRCS) $$($(1)_ALL_DEPS)
 	@$$(MAKE) $(3) RPTH=$$($(1)_DIR) $$(MFLAGS) $$($(1)_DIR)
 endef
 
-define LIB_template =
+define LIB_template
 $$($(1)_NAME): $$($(1)_ALL_OBJS)
 	@$$(call MKLIB_P,$(2))
 	@$$(AR) $$(ARFLAGS) $$($(1)_NAME) $$?
