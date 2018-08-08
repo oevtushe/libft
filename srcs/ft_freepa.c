@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstgetidx.c                                     :+:      :+:    :+:   */
+/*   ft_freepa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 19:21:50 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/08 18:19:20 by oevtushe         ###   ########.fr       */
+/*   Created: 2018/07/31 18:31:21 by oevtushe          #+#    #+#             */
+/*   Updated: 2018/08/08 18:04:12 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Function searchs element in the list.
-**
-** check function has to return 1 if elements is equall, 0 otherwise
-**
-** @return	element index if first one is present in the list,
-**			-1 otherwise
+** Function deletes array of pointers with specified size.
+** The content of the array may have any type
 */
 
-int	ft_lstgetidx(t_list *lst, void *data, int (*check)(void *elem, void *data))
+void	ft_freepa(void ***arr, int size, void (*del)(void *content))
 {
 	int i;
 
-	i = 0;
-	if (check)
+	i = -1;
+	if (arr && *arr)
 	{
-		while (lst)
-		{
-			if (check(lst->content, data))
-				return (i);
-			lst = lst->next;
-			++i;
-		}
+		while (++i < size)
+			if ((*arr)[i])
+				del((*arr)[i]);
+		ft_memdel((void **)arr);
 	}
-	return (-1);
 }

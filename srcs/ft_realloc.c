@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstgetidx.c                                     :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 19:21:50 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/08 18:19:20 by oevtushe         ###   ########.fr       */
+/*   Created: 2018/06/13 15:48:28 by oevtushe          #+#    #+#             */
+/*   Updated: 2018/08/08 18:05:35 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Function searchs element in the list.
+** Function reallocates memory
 **
-** check function has to return 1 if elements is equall, 0 otherwise
-**
-** @return	element index if first one is present in the list,
-**			-1 otherwise
+** Sizes should be given in bytes
+** If current size is equall or bigger than new one, nothing will be done
 */
 
-int	ft_lstgetidx(t_list *lst, void *data, int (*check)(void *elem, void *data))
+void	ft_realloc(void **mem, size_t old_size, size_t new_size)
 {
-	int i;
+	void	*new_mem;
 
-	i = 0;
-	if (check)
+	if (old_size < new_size)
 	{
-		while (lst)
-		{
-			if (check(lst->content, data))
-				return (i);
-			lst = lst->next;
-			++i;
-		}
+		new_mem = ft_memalloc(new_size);
+		ft_memcpy(new_mem, *mem, old_size);
+		ft_memdel(mem);
+		*mem = new_mem;
 	}
-	return (-1);
 }

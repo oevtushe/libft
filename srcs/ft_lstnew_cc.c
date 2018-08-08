@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstgetidx.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew_cc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 19:21:50 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/08 18:19:20 by oevtushe         ###   ########.fr       */
+/*   Created: 2018/07/30 15:45:08 by oevtushe          #+#    #+#             */
+/*   Updated: 2018/08/08 18:04:45 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Function searchs element in the list.
+** Function creates new node with specified content and
+** content_size, but content won't be copied, it will
+** point at passed one
 **
-** check function has to return 1 if elements is equall, 0 otherwise
-**
-** @return	element index if first one is present in the list,
-**			-1 otherwise
+** Suffix 'cc' means catch content
 */
 
-int	ft_lstgetidx(t_list *lst, void *data, int (*check)(void *elem, void *data))
+t_list	*ft_lstnew_cc(void *content, size_t content_size)
 {
-	int i;
+	t_list *node;
 
-	i = 0;
-	if (check)
+	node = (t_list *)ft_memalloc(sizeof(t_list));
+	if (node)
 	{
-		while (lst)
-		{
-			if (check(lst->content, data))
-				return (i);
-			lst = lst->next;
-			++i;
-		}
+		node->content = content;
+		node->content_size = content_size;
 	}
-	return (-1);
+	return (node);
 }

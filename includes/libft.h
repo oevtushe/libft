@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/07 14:42:45 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/08 18:26:16 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 # define ABS(x) (x) >= 0 ? (x) : -(x)
 # define GNL_BUFF_SIZE 10
 
-typedef struct	s_stream
+typedef struct			s_stream
 {
-	int		fd;
-	char	*buff;
-}				t_stream;
+	int					fd;
+	char				*buff;
+}						t_stream;
 
 typedef struct			s_pair
 {
@@ -51,6 +51,8 @@ typedef struct			s_list_de
 ** Memory
 */
 
+void					ft_realloc(void **mem, size_t old_size,
+							size_t new_size);
 void					ft_bzero(void *s, size_t n);
 void					*ft_memccpy(void *dst, const void *src,
 							int c, size_t n);
@@ -146,11 +148,23 @@ int						ft_intln(int n);
 size_t					ft_parrlen_zt(void **arr);
 void					ft_parrdel_zt(void ***arr);
 int						get_next_line(const int fd, char **line);
+void					ft_qsarr(void **arr, int start, int end,
+							int (*cmp)(void *, void *));
+void					ft_freepa_sd(void ***arr, int size);
+void					ft_freepa(void ***arr, int size,
+							void (*del)(void *content));
+int						ft_argsparser(char **argv, int size, void *container,
+							int (*set_option)(void *container, char option));
+void					ft_realloc(void **mem, size_t old_size,
+							size_t new_size);
 
 /*
 ** List
 */
 
+void					**ft_lsttoarr(t_list *lst);
+t_list					*ft_arrtolst(void **arr, int size);
+t_list					*ft_lstnew_cc(void *content, size_t content_size);
 t_list					*ft_lstnew(void const *content, size_t content_size);
 void					ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void					ft_lstdel(t_list **alst, void (*del)(void*, size_t));
@@ -165,7 +179,8 @@ void					ft_lstswap(t_list *lst, unsigned int p1,
 t_list					*ft_lstget(t_list *lst, unsigned int idx);
 void					*ft_lstdequeue(t_list **root);
 void					ft_lstdelsafe(t_list **lst, void *data, \
-							int (*cmp)(void *cdata, void *data), void (*del)(void *, size_t));
+							int (*cmp)(void *cdata, void *data),
+								void (*del)(void *, size_t));
 int						ft_lstgetidx(t_list *lst, void *data, \
 							int (*check)(void *elem, void *data));
 void					*ft_lstpop(t_list **lst);
@@ -192,10 +207,11 @@ void					ft_lstswap_de(t_list_de *lst, unsigned int p1,
 							unsigned int p2);
 t_list_de				*ft_lstget_de(t_list_de *lst, unsigned int idx);
 void					ft_lst_sdn(t_list_de **dil);
-
-t_pair					*ft_newpair(void *fst, size_t fst_size, void *scd, size_t scd_size);
+t_pair					*ft_newpair(void *fst, size_t fst_size,
+							void *scd, size_t scd_size);
 t_pair					*ft_newpair_cc(void *fst, void *scd);
 char					*ft_strimplode(char **arr, int size, char *glue);
-int						ft_arrgetidx(void **arr, int size, void *data, int (*check)(void *elem, void *data));
+int						ft_arrgetidx(void **arr, int size, void *data,
+							int (*check)(void *elem, void *data));
 
 #endif

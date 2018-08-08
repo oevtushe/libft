@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 18:16:19 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/02 12:07:11 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/08 18:20:05 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 **				0 otherwise
 */
 
-int		ft_arrgetidx(void **arr, int size, void *data, int (*check)(void *elem, void *data))
+int		ft_arrgetidx(void **arr, int size, void *data,
+			int (*check)(void *elem, void *data))
 {
 	int i;
 

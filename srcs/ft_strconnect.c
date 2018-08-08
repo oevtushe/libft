@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/24 14:35:32 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/07/23 18:41:01 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/08 18:15:21 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,22 @@
 
 void		ft_strconnect(char **str1, const char *str2, int side)
 {
-	int		al;
 	char	*res;
 
-	al = 0;
 	res = NULL;
 	if (str1 && str2)
 	{
 		if (!*str1)
-		{
 			*str1 = ft_strnew(0);
-			al = 1;
-		}
 		if (*str1)
 		{
 			if (side > 0)
 				res = ft_strjoin(*str1, str2);
 			else if (side < 0)
 				res = ft_strjoin(str2, *str1);
+			ft_strdel(str1);
 			if (res)
-			{
-				ft_strdel(str1);
 				*str1 = res;
-			}
-			else if (al)
-				ft_strdel(str1);
 		}
 	}
 }

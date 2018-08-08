@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 11:53:33 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/07/23 19:02:20 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/08 18:19:39 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 ** del fucntion should delete elem's content
 */
 
-void	ft_lstdelsafe(t_list **lst, void *data, int (*cmp)(void *cdata, void *data), void (*del)(void *, size_t))
+void	ft_lstdelsafe(t_list **lst, void *data,
+			int (*cmp)(void *cdata, void *data), void (*del)(void *, size_t))
 {
 	t_list	*prev;
 	t_list	*cur;

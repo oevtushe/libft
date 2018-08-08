@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstgetidx.c                                     :+:      :+:    :+:   */
+/*   ft_lsttoarr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 19:21:50 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/08 18:19:20 by oevtushe         ###   ########.fr       */
+/*   Created: 2018/07/30 13:49:40 by oevtushe          #+#    #+#             */
+/*   Updated: 2018/08/08 18:05:03 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Function searchs element in the list.
+** Function creates an array of pointers from data in list content
 **
-** check function has to return 1 if elements is equall, 0 otherwise
-**
-** @return	element index if first one is present in the list,
-**			-1 otherwise
+** Notice: all content in list nodes has to have single type.
+** The content won't be cloned.
 */
 
-int	ft_lstgetidx(t_list *lst, void *data, int (*check)(void *elem, void *data))
+void	**ft_lsttoarr(t_list *lst)
 {
-	int i;
+	int		idx;
+	int		len;
+	void	**arr;
 
-	i = 0;
-	if (check)
+	idx = 0;
+	arr = NULL;
+	if (lst)
 	{
-		while (lst)
+		len = ft_lstlen(lst);
+		arr = ft_memalloc(len * sizeof(void *));
+		if (arr)
 		{
-			if (check(lst->content, data))
-				return (i);
-			lst = lst->next;
-			++i;
+			while (lst)
+			{
+				arr[idx++] = lst->content;
+				lst = lst->next;
+			}
 		}
 	}
-	return (-1);
+	return (arr);
 }

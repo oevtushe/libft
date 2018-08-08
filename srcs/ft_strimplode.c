@@ -6,20 +6,20 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 15:26:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/07/23 18:03:43 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/08/08 18:21:10 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Function connects all strings in given array 
+** Function connects all strings in given array
 ** using separator into single line
 **
-** If @param glue is NULL function won't use any 
+** If @param glue is NULL function won't use any
 ** separator, just will join the values
 **
-** If @param arr is NULL function returns NULL 
+** If @param arr is NULL function returns NULL
 **
 ** @param	arr		array values will be connected from
 ** @param	size	number of strings in the array
@@ -27,7 +27,7 @@
 ** @return			combined string
 */
 
-char *ft_strimplode(char **arr, int size, char *glue)
+char	*ft_strimplode(char **arr, int size, char *glue)
 {
 	int		i;
 	int		mg;
@@ -43,8 +43,7 @@ char *ft_strimplode(char **arr, int size, char *glue)
 			glue = ft_strnew(0);
 			mg = 1;
 		}
-		--size;
-		while (i < size)
+		while (i < (size - 1))
 		{
 			ft_strconnect(&res, arr[i], 1);
 			ft_strconnect(&res, glue, 1);

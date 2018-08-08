@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstgetidx.c                                     :+:      :+:    :+:   */
+/*   ft_arrtolst.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 19:21:50 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/08 18:19:20 by oevtushe         ###   ########.fr       */
+/*   Created: 2018/07/30 15:26:38 by oevtushe          #+#    #+#             */
+/*   Updated: 2018/08/08 18:03:51 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Function searchs element in the list.
-**
-** check function has to return 1 if elements is equall, 0 otherwise
-**
-** @return	element index if first one is present in the list,
-**			-1 otherwise
+** Function converts array of pointers to list
+** Data from the array won't be copied, just captured by pointer
 */
 
-int	ft_lstgetidx(t_list *lst, void *data, int (*check)(void *elem, void *data))
+t_list	*ft_arrtolst(void **arr, int size)
 {
-	int i;
+	int		i;
+	t_list	*begin;
+	t_list	*last;
 
 	i = 0;
-	if (check)
+	begin = NULL;
+	last = NULL;
+	if (size && arr)
 	{
-		while (lst)
+		last = ft_lstnew_cc(arr[i++], sizeof(t_list));
+		begin = last;
+		while (i < size)
 		{
-			if (check(lst->content, data))
-				return (i);
-			lst = lst->next;
+			last->next = ft_lstnew_cc(arr[i], sizeof(t_list));
+			last = last->next;
 			++i;
 		}
 	}
-	return (-1);
+	return (begin);
 }

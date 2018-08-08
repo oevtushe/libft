@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/08/07 14:39:42 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/08/08 18:09:11 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,11 +127,16 @@ FT_SRCF				:= ft_bzero.c			\
 					   ft_lstdequeue.c		\
 					   ft_lstgetidx.c		\
 					   ft_lstpeeklast.c		\
+					   ft_realloc.c			\
 					   ft_lstpop.c			\
 					   ft_parrdel_zt.c		\
 					   ft_parrlen_zt.c		\
 					   ft_strchcnt.c		\
 					   ft_arrgetidx.c		\
+					   ft_argsparser.c		\
+					   ft_freepa.c			\
+					   ft_freepa_sd.c		\
+					   ft_lstnew_cc.c		\
 					   ft_newpair_cc.c		\
 					   get_next_line.c		\
 					   ft_count_words.c
