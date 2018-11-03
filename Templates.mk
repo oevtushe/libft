@@ -6,7 +6,7 @@
 #    By: sasha <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/05 12:30:58 by sasha             #+#    #+#              #
-#    Updated: 2018/08/07 19:34:39 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/11/03 11:31:22 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,23 +72,21 @@ MFLAGS		 		:= --no-print-directory -C
 
 define BINARY_template1
 $$($(1)_NAME): $$($(1)_ALL_OBJS)
-	@$$(call EXEC_P,$$@)
+	@printf "\r\033[38;5;117m✓ $$@ created\033[0m\033[K\n"
 	@$$(CC) $$(CFLAGS) -o $$($(1)_NAME) $$^ $$($(2)_NAME)
 endef
 
 define BINARY_template2
 $$($(1)_NAME): $$($(1)_ALL_EXTRA_LIBS) $$($(1)_OBJS)
-	@$$(call EXEC_P,$$@)
-	@$$(CC) $$(CFLAGS) -o $$($(1)_NAME) $$^ $$($(2)_NAME)
+	@printf "\r\033[38;5;117m✓ $$@ created\033[0m\033[K\n"
+	@$$(CC) $$(CFLAGS) -o $$($(1)_NAME) $$^ $$($(2)_NAME) $$($(1)_EXTRA)
 endef
 
 define BASIC_template
 ifeq ($$(MAKELEVEL),0)
-WCOMPILE_P = @$(call COMPILE_P,$$@)
-WDIR_CREATE_P = @$(call DIR_CREATE_P,$$@)
+WCOMPILE_P = @printf "\033[2KCompiling: $$(@:%=$$(RPTH)/%)\r"
 else
-WCOMPILE_P = @$(call COMPILE_P,$$(@:%=$$(RPTH)/%))
-WDIR_CREATE_P = @$(call DIR_CREATE_P,$$($(1)_OBJS_DIR:$$($(1)_DIR)/%=$$(RPTH)/%))
+WCOMPILE_P = @printf "\033[2KCompiling: $$(@:%=$$(RPTH)/%)\r"
 endif
 
 $$($(1)_OBJS_DIR)/%.o: $$($(1)_SRCS_DIR)/%.c $$($(1)_ALL_DEPS)
@@ -97,7 +95,6 @@ $$($(1)_OBJS_DIR)/%.o: $$($(1)_SRCS_DIR)/%.c $$($(1)_ALL_DEPS)
 $$($(1)_OBJS): |$$($(1)_ALL_OBJS_DIRS)
 
 $$($(1)_ALL_OBJS_DIRS):
-	$$(WDIR_CREATE_P)
 	@mkdir $$@
 
 re: fclean all
@@ -117,8 +114,6 @@ endef
 
 define LIB_template
 $$($(1)_NAME): $$($(1)_ALL_OBJS)
-	@$$(call MKLIB_P,$(2))
 	@$$(AR) $$(ARFLAGS) $$($(1)_NAME) $$?
 	@ranlib $$($(1)_NAME)
-	@$$(call DONE_P)
 endef
