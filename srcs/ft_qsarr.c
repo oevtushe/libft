@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 13:23:42 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/08 18:05:20 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/11/10 16:06:58 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ static int	partition(void **arr, int start, int end,
 	x = arr[start];
 	while (1)
 	{
-		while (cmp(arr[i], x) == -1)
+		while (cmp(arr[i], x) < 0)
 			++i;
-		while (cmp(arr[j], x) == 1)
+		while (cmp(arr[j], x) > 0)
 			--j;
 		if (i < j)
 			swap(&arr[i++], &arr[j--]);
@@ -53,11 +53,11 @@ static int	partition(void **arr, int start, int end,
 ** using quicksort algorithm
 **
 ** @param	arr		array to sort
-** @param	se		x has to indicate start of the array (0),
-** 					y has to indicate end of the array (arrsize)
+** @param	start	indicates start of the array (0)
+** @param	end		indicates end of the array (arrsize)
 ** @param	cmp		function to compare two elements. Has to return
-** 					1 if first element is bigger than second,
-** 					-1 if first element is less than second,
+** 					> 0 if first element is bigger than second,
+** 					< 0 if first element is less than second,
 ** 					0 when elements are equal
 */
 

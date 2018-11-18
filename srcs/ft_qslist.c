@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_qslist.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 13:38:04 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/11/05 10:08:19 by oevtushe         ###   ########.fr       */
+/*   Created: 2018/11/10 15:24:36 by oevtushe          #+#    #+#             */
+/*   Updated: 2018/11/18 14:17:26 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+static void	del_simple(void *content, size_t content_size)
 {
-	size_t i;
+	content = NULL;
+	content_size = 0;
+}
 
-	i = 0;
-	while (i < n)
-		((char*)s)[i++] = 0;
+/*
+** Sort a list using quick sort algorithm
+*/
+
+void		ft_qslist(t_list **lst, int (*cmp)(void *, void *))
+{
+	int		size;
+	void	**arr;
+
+	size = ft_lstlen(*lst);
+	arr = ft_lsttoarr(*lst);
+	ft_qsarr(arr, 0, size - 1, cmp);
+	ft_lstdel(lst, del_simple);
+	*lst = ft_arrtolst(arr, size);
+	free(arr);
 }

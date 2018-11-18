@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_treedel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 13:38:04 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/11/05 10:08:19 by oevtushe         ###   ########.fr       */
+/*   Created: 2018/11/15 14:46:41 by oevtushe          #+#    #+#             */
+/*   Updated: 2018/11/18 14:16:56 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_treedel(t_tree **tree,
+			void (*del)(void *content, size_t content_size))
 {
-	size_t i;
+	t_tree	*tmp;
 
-	i = 0;
-	while (i < n)
-		((char*)s)[i++] = 0;
+	if (tree)
+	{
+		while (*tree)
+		{
+			ft_treedel(&(*tree)->kids, del);
+			del((*tree)->content, (*tree)->content_size);
+			tmp = *tree;
+			*tree = (*tree)->siblings;
+			free(tmp);
+		}
+	}
 }

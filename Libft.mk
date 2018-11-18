@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/08/08 18:09:11 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/11/18 13:34:50 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,11 +134,27 @@ FT_SRCF				:= ft_bzero.c			\
 					   ft_strchcnt.c		\
 					   ft_arrgetidx.c		\
 					   ft_argsparser.c		\
+					   ft_argsparser_ti.c	\
 					   ft_freepa.c			\
 					   ft_freepa_sd.c		\
 					   ft_lstnew_cc.c		\
 					   ft_newpair_cc.c		\
 					   get_next_line.c		\
+					   ft_lsttoarr.c		\
+					   ft_qsarr.c			\
+					   ft_arrtolst.c		\
+					   ft_abs.c				\
+					   ft_treenew.c			\
+					   ft_treenew_cc.c		\
+					   ft_treeadd_kid.c		\
+					   ft_treedel.c			\
+					   ft_qstreelevel.c		\
+					   ft_treeleveltoarr.c	\
+					   ft_treelevellen.c	\
+					   ft_treeleveldel.c	\
+					   ft_treenew_spec.c	\
+					   ft_qslist.c			\
+					   ft_arrtotreelevel.c	\
 					   ft_count_words.c
 
 FT_NAME				:= $(FT_DIR)/libft.a
@@ -155,3 +171,4 @@ FT_ALL_DEPS_DIRS	:= $(FT_DEPS_DIR)
 FT_ALL_DEPS			:= $(FT_DEPS)
 FT_ALL_OBJS_DIRS	:= $(FT_OBJS_DIR)
 FT_ALL_OBJS			:= $(FT_OBJS)
+FT_ALL_SRCS			:= $(FT_SRCS)

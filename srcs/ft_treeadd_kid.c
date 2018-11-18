@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_treeadd_kid.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 13:38:04 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/11/05 10:08:19 by oevtushe         ###   ########.fr       */
+/*   Created: 2018/11/06 11:35:21 by oevtushe          #+#    #+#             */
+/*   Updated: 2018/11/18 13:39:00 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_treeadd_kid(t_tree **tree, t_tree *new)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
-		((char*)s)[i++] = 0;
+	if (tree && *tree && new)
+	{
+		new->siblings = (*tree)->kids;
+		(*tree)->kids = new;
+	}
 }

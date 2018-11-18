@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/08/08 18:26:16 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/11/18 14:18:48 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,21 @@
 # include <limits.h>
 
 # define ABS(x) (x) >= 0 ? (x) : -(x)
-# define GNL_BUFF_SIZE 10
+# define GNL_BUFF_SIZE 4096
+
+typedef struct			s_tree
+{
+	void				*content;
+	size_t				content_size;
+	struct s_tree		*siblings;
+	struct s_tree		*kids;
+}						t_tree;
+
+typedef struct			s_pos
+{
+	int	x;
+	int	y;
+}						t_pos;
 
 typedef struct			s_stream
 {
@@ -127,6 +141,7 @@ int						ft_strchcnt(char *line, char c);
 ** Other
 */
 
+int						ft_abs(int a);
 int						ft_isalpha(int c);
 int						ft_isdigit(int c);
 int						ft_isalnum(int c);
@@ -154,6 +169,9 @@ void					ft_freepa_sd(void ***arr, int size);
 void					ft_freepa(void ***arr, int size,
 							void (*del)(void *content));
 int						ft_argsparser(char **argv, int size, void *container,
+							int (*set_option)(void *container, char option));
+t_pos					ft_argsparser_ti(char **argv, int *sz_vld,
+							void *container,
 							int (*set_option)(void *container, char option));
 void					ft_realloc(void **mem, size_t old_size,
 							size_t new_size);
@@ -185,6 +203,7 @@ int						ft_lstgetidx(t_list *lst, void *data, \
 							int (*check)(void *elem, void *data));
 void					*ft_lstpop(t_list **lst);
 void					*ft_lstpeeklast(t_list *lst);
+void					ft_qslist(t_list **lst, int (*cmp)(void *, void *));
 
 /*
 ** Doubly linked list
@@ -213,5 +232,24 @@ t_pair					*ft_newpair_cc(void *fst, void *scd);
 char					*ft_strimplode(char **arr, int size, char *glue);
 int						ft_arrgetidx(void **arr, int size, void *data,
 							int (*check)(void *elem, void *data));
+
+/*
+** Tree
+*/
+
+t_tree					*ft_treenew(void *content, size_t content_size);
+t_tree					*ft_treenew_cc(void *content, size_t content_size);
+t_tree					*ft_treenew_spec(void *content, size_t content_size,
+							void *(*dup_content)(void *content));
+void					ft_treeadd_kid(t_tree **tree, t_tree *new);
+void					ft_treedel(t_tree **tree,
+							void (*del)(void *content, size_t content_size));
+void					ft_qstreelevel(t_tree **tree,
+							int (*cmp)(void *, void *));
+void					**ft_treeleveltoarr(t_tree *tree);
+size_t					ft_treelevellen(const t_tree *tree);
+void					ft_treeleveldel(t_tree **tree,
+							void (*del)(void*, size_t));
+t_tree					*ft_arrtotreelevel(void **arr, int size);
 
 #endif
