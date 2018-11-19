@@ -6,7 +6,7 @@
 #    By: sasha <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/05 12:30:58 by sasha             #+#    #+#              #
-#    Updated: 2018/11/05 12:26:26 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/11/19 13:34:59 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,10 +81,10 @@
 #	<HERE>_OBJS_DIR					:= objs
 #	<HERE>_DEPS_DIR					:= includes
 #
-#	<HERE>_DIR						:= $(<HERE>_SRCS_DIR)/libft
+#	FT_DIR							:= $(<HERE>_SRCS_DIR)/libft
 #
-#	<HERE>clude						$(FT_DIR)/Templates.mk
-#	<HERE>clude						$(FT_DIR)/Libft.mk
+#	include							$(FT_DIR)/Templates.mk
+#	include							$(FT_DIR)/Libft.mk
 #
 #	<HERE>_NAME						:=
 #
@@ -120,7 +120,7 @@
 #	
 #	fclean: clean
 #		@$(MAKE) fclean $(MFLAGS) $(FT_DIR)
-#		@$(RM) $(<HERE>_OBJS_DIR)
+#		@$(RM) $(<HERE>_NAME)
 #
 # -------------------------------------------------------------------------------------
 #
