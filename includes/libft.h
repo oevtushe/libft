@@ -6,7 +6,7 @@
 /*   By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:06:36 by oevtushe          #+#    #+#             */
-/*   Updated: 2018/11/18 14:18:48 by oevtushe         ###   ########.fr       */
+/*   Updated: 2018/12/18 18:56:07 by oevtushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,7 @@ int						ft_strchcnt(char *line, char c);
 
 int						ft_abs(int a);
 int						ft_isalpha(int c);
+int						ft_isspace(char c);
 int						ft_isdigit(int c);
 int						ft_isalnum(int c);
 int						ft_isascii(int c);

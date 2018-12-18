@@ -6,7 +6,7 @@
 #    By: oevtushe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 08:08:33 by oevtushe          #+#    #+#              #
-#    Updated: 2018/11/18 13:34:50 by oevtushe         ###   ########.fr        #
+#    Updated: 2018/12/18 18:56:23 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -155,6 +155,7 @@ FT_SRCF				:= ft_bzero.c			\
 					   ft_treenew_spec.c	\
 					   ft_qslist.c			\
 					   ft_arrtotreelevel.c	\
+					   ft_isspace.c			\
 					   ft_count_words.c
 
 FT_NAME				:= $(FT_DIR)/libft.a
