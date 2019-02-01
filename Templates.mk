@@ -6,7 +6,7 @@
 #    By: sasha <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/05 12:30:58 by sasha             #+#    #+#              #
-#    Updated: 2018/11/19 13:34:59 by oevtushe         ###   ########.fr        #
+#    Updated: 2019/01/10 10:28:12 by oevtushe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -143,19 +143,20 @@ RM			 		:= rm -rf
 AR			 		:= ar
 CC			 		:= gcc
 ARFLAGS		 		:= rc
+LFLAGS				:=
 CFLAGS		 		:= -Wall -Werror -Wextra
 MFLAGS		 		:= --no-print-directory -C
 
 define BINARY_template1
 $$($(1)_NAME): $$($(1)_ALL_OBJS)
 	@printf "\r\033[38;5;117m✓ $$@ created\033[0m\033[K\n"
-	@$$(CC) $$(CFLAGS) -o $$($(1)_NAME) $$^ $$($(2)_NAME)
+	@$$(CC) $$(CFLAGS) $$(LFLAGS) -o $$($(1)_NAME) $$^ $$($(2)_NAME)
 endef
 
 define BINARY_template2
 $$($(1)_NAME): $$($(1)_ALL_EXTRA_LIBS) $$($(1)_OBJS)
 	@printf "\r\033[38;5;117m✓ $$@ created\033[0m\033[K\n"
-	@$$(CC) $$(CFLAGS) -o $$($(1)_NAME) $$^ $$($(2)_NAME) $$($(1)_EXTRA)
+	@$$(CC) $$(CFLAGS) $$(LFLAGS) -o $$($(1)_NAME) $$^ $$($(2)_NAME) $$($(1)_EXTRA)
 endef
 
 define BASIC_template
